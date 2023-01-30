@@ -1,0 +1,52 @@
+   
+<div class="container-md mt-3">
+    <h1 class="p-3 mb-2 bg-light bg-gradient text-dark">Registro de contas Médicas</h1>
+</div>
+
+<div>
+    <table id="table"  class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">medico</th>
+            <th scope="col">CRM</th>
+            <th scope="col">Hospital</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Paciente</th>
+            <th scope="col">Convenio</th>
+            <th scope="col">Acomodação</th>
+            <th scope="col">Procedimento</th>
+            <th scope="col">Ações</th>
+            
+        </tr>
+    </thead>
+    
+    <tbody *ngIf="Registro$ | async as registro" >
+        <tr  *ngFor="let list of registro.Registros">
+        
+            <td >{{list.medico}}</td>
+            <td >{{list.CRM}}</td> 
+            <th >{{list.hospital}}</th>
+            <td >{{list.CNPJ}}</td>
+            <td >{{list.paciente}}</td>
+            <td >{{list.convenio}}</td>
+            <td >{{list.acomodacao}}</td>
+            <td >{{list.procedimento}}</td>
+            
+            <td>
+                <a id="acoes" (click)='Delete(list.id)' style="width: 50px; padding:2px;" class="btn btn-danger">Apagar</a>
+                <a id="acoes" (click)='BuscarPorId(list.id)' class="btn btn-primary">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+
+    </table>
+</div>
+
+<div *ngIf="show; else loading"></div>
+<ng-template #loading>
+    <div *ngIf="Registro$" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</ng-template>

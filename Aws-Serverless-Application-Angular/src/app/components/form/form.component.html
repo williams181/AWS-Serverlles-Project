@@ -1,0 +1,90 @@
+<div class="container mt-5">
+
+    <form>
+
+        <!-- <div class="form-group">
+            <label for="exampleFormControlFile1">Selecione o documento</label>
+            <input type="file" class="form-control-file" id="registroAnestesico">
+        </div> -->
+
+        <!-- <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Data do Evento</label>
+                    <input type="date" class="form-control" id="dataEvento">
+                    <div class="form-text"></div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Médico</label>
+                    <input type="text" class="form-control" id="medico" [(ngModel)]="arquivo.medico" name="medico" required="required">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">CRM</label>
+                    <input type="text" class="form-control" id="crm" [(ngModel)]="arquivo.CRM" name="CRM" required="required">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Hospital</label>
+                    <input type="text" class="form-control" id="hospital" [(ngModel)]="arquivo.hospital" name="hospital" required="required">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">CNPJ</label>
+                    <input type="text" class="form-control" id="cnpj" [(ngModel)]="arquivo.CNPJ" name="CNPJ" required="required">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Paciente</label>
+            <input type="text" class="form-control" id="paciente" [(ngModel)]="arquivo.paciente" name="paciente">
+            <div class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Convênio</label>
+            <input type="text" class="form-control" id="convenio" [(ngModel)]="arquivo.convenio" name="convenio">
+            <div class="form-text"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Acomodação</label>
+            <input type="text" class="form-control" id="acomodacao" [(ngModel)]="arquivo.acomodacao" name="acomodocao">
+            <div class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Procedimento</label>
+            <input type="text" class="form-control" id="procedimento" [(ngModel)]="arquivo.procedimento" name="procedimento">
+            <div class="form-text"></div>
+        </div>
+
+       
+
+        <button *ngIf="show; else loading" id="buttonSave" (click)="Salvar()" type="submit" class="btn btn-primary">Enviar documento</button>
+        <ng-template #loading>
+        <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </ng-template>
+    </form>
+
+</div>

@@ -1,0 +1,25 @@
+#navBar{
+    width: 20%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    background:  #293949;
+    
+}
+#sectionBody{
+    margin-left: 25%;
+    width: 70%;
+}
+#navList{
+    margin-top: 5%;
+}
+#navList li a{
+    color:white;
+}
+a:hover{
+    background-color: #017af3;
+    
+}
+
+
+
