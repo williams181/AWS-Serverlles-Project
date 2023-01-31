@@ -13,6 +13,7 @@ import {Observable, of} from 'rxjs';
 export class AppComponent implements OnInit{
  
   title = 'aws-serverless-application-angular';
+  
 
   ngOnInit(){
    

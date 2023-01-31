@@ -1,4 +1,5 @@
 export interface interfaceApiService{
+   
     id:number,
     medico: String,
     CRM: number,

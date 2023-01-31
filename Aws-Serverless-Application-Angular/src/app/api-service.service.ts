@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { interfaceApiService } from './InterfaceApiService';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
+import { FormComponent} from 'src/app/components/form/form.component';
+import { Router } from '@angular/router';
 
 
 interface Response { results: interfaceApiService[] }
@@ -10,34 +12,32 @@ interface Response { results: interfaceApiService[] }
 })
 
 export class ApiServiceService {
+   ngModel =  new EventEmitter<interfaceApiService>();
+   static arquivo =  new EventEmitter<interfaceApiService>();
+ 
   
 
-  constructor(private httpCliente: HttpClient) { }
+  constructor(private httpCliente: HttpClient, private router: Router) { }
+
 
 
   Buscar(): Observable<any>{
-
-    // const headers = new HttpHeaders ({
-    //   "Access-Control-Allow-Origin": "",
-    // });
-
-    //const requestOptions = {headers:headers,  method: 'GET',   redirect: 'follow'}
 
     return this.httpCliente.get<any>("/api/arquivo/");
 
   }
 
 
+  BuscarPorId(id: any ){
 
-
-
-  BuscarPorId(id: String ){
-    return this.httpCliente.get<interfaceApiService>
-    (`/api/arquivo/${id}`).toPromise();
+  return this.httpCliente.get<any>(`/api/arquivo/${id}`);
+   
+   
   }
 
   Salvar(arquivo: interfaceApiService){
     return this.httpCliente.post<interfaceApiService>(`/api/cadastro`,arquivo).toPromise();
+    
   }
 
   Atualizar(arquivo: interfaceApiService){
