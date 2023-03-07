@@ -1,0 +1,43 @@
+.conteiner{
+    color:aliceblue;
+    margin-top: 10%;
+    width: 70%;
+    border: 2px solid white;
+    box-shadow: 5px 5px 5px 5px gray;
+    border-radius: 10px;
+    background-color:  #293949;
+
+}
+#forget{
+    margin-left: 10%;
+}
+p{
+    margin-top: 5%;
+}
+#espaco{
+    top: 5%;
+}
+#butonAlinhar{
+    right: 10%;
+}
+#butCod{
+    margin-left: 5%;
+}
+.header{
+    text-align: center;
+}
+.form{
+    width:60%;
+    margin-left: 20%;
+}
+a{
+    color: aliceblue;
+}
+.esqueciSenha{
+    width:60%;
+    margin-left: 20%;
+}
+#butForget{
+  
+    margin-left:70%;
+}

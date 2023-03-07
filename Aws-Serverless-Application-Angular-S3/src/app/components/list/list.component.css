@@ -1,0 +1,28 @@
+#table{
+    width:60%;
+    
+    
+}
+#acoes {
+    flex-direction: row;
+}
+
+thead{
+    background:  #2a2e4e;
+}
+tbody{
+    background:  #293949;
+}
+td  {
+    color:white;
+}
+th {
+    color:  #406a94;
+}
+#acaoApagar{
+  
+    float:left;
+    width: 70px;
+    margin-top: 5%;
+    margin-left:5%;
+}

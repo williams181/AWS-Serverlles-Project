@@ -1,0 +1,55 @@
+
+    <nav id="navBar" >
+                               
+           
+      <div id="navList">
+        <ul  class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <h1 class="text-hide" style="background-image: url('/docs/4.1/assets/brand/bootstrap-solid.svg'); width: 50px; height: 50px; color:bisque">Fatura.IA</h1>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="btn btn-outline-light btn-lg" aria-current="page" routerLink="/form">Registro</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a id="" class="btn btn-outline-light btn-lg" routerLink="/list">Listagem</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                  <button ngbDropdownItem>Action - 1</button>
+
+                  <button ngbDropdownItem>Another Action</button>
+
+                  <button ngbDropdownItem>Something else is here</button>
+
+                  </div>
+
+                  </div>
+              </li> -->
+        </ul>
+        
+      
+        <button (click)="signOut()" id="sair" class="btn  btn-outline-light btn-lg">Sair</button>
+  </div>
+
+  
+
+</nav>
+
+<section id="sectionBody">   
+  
+  <div class="fas fa-home me-1">
+
+      <router-outlet></router-outlet>
+     
+  </div>
+
+
+
+</section>

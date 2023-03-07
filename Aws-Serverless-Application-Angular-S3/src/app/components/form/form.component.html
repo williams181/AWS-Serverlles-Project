@@ -1,0 +1,106 @@
+
+
+<app-navbar></app-navbar>
+
+
+<div class="container mt-5">
+    
+    <div *ngIf="att; else load"></div>
+   <ng-template #load>
+   <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  </ng-template>
+   
+<div class="container-md mt-3">
+    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Registro de Contas Médicas</h1>
+</div>
+
+<div class="container mt-3">
+    
+    <form class="needs-validation" novalidate [formGroup]="form" >
+             
+        <input type="hidden" class="form-control" id="id" formControlName="id" >
+             
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Médico</label>
+                    <input type="text" class="form-control" id="medico" formControlName="medico" [ngClass]="{'is-invalid': submited  && hasError('medico')}" >
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">CRM</label>
+                    <input type="number" class="form-control" id="CRM" formControlName="CRM" [ngClass]="{'is-invalid': submited && hasError('CRM')}">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Hospital</label>
+                    <input type="text" class="form-control" id="hospital"  formControlName="hospital" [ngClass]="{'is-invalid': submited && hasError('hospital')}">
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">CNPJ</label>
+                    <input type="text" placeholder="XX. XXX. XXX/0001-XX" class="form-control" id="cnpj" formControlName="CNPJ" [ngClass]="{'is-invalid': submited && hasError('CNPJ')}">
+                    <div class="invalid-feedback" *ngIf="hasError('CNPJ')">
+                        Numero do CNPJ deve conter 14 Numeros
+                    </div>
+                   
+                    <div class="form-text"></div>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+        <div class="mb-3">
+            <label class="form-label">Paciente</label>
+            <input type="text" class="form-control" id="paciente"  formControlName="paciente" [ngClass]="{'is-invalid': submited && hasError('paciente')}">
+            <div class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Convênio</label>
+            <input type="text" class="form-control" id="convenio"  formControlName="convenio" [ngClass]="{'is-invalid': submited && hasError('convenio')}">
+            <div class="form-text"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Acomodação</label>
+            <input type="text" class="form-control" id="acomodacao"  formControlName="acomodacao" [ngClass]="{'is-invalid': submited && hasError('acomodacao')}"> 
+            <div class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Procedimento</label>
+            <input type="text" class="form-control" id="procedimento" formControlName="procedimento" [ngClass]="{'is-invalid': submited && hasError('procedimento')}">
+            <div class="form-text"></div>
+        </div>
+
+
+
+        <button *ngIf="show; else loading" id="buttonSave" (click)="Validador()" type="submit" class="btn btn-primary">Enviar documento</button>
+        
+        <ng-template #loading>
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+        </ng-template>
+
+    </form>
+
+</div>

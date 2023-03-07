@@ -1,0 +1,69 @@
+
+<div class="conteiner">
+    <div class="row">
+        <div class="auth-box">
+            <div *ngIf="!isConfirm">
+              <div class="header">
+                <br>
+                <h2><strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Bem vindo</strong></h2>
+
+                <h4><strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Crie sua Conta</strong></h4>
+
+              </div>
+              <div class="form">
+               
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" style="font-size: larger;">Nome</label>
+                                <input type="text" maxlength="50" class="form-control"  [(ngModel)]="user.name" required="">
+                                <div class="form-text"></div>
+                        </div>
+                      </div>
+
+                      
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" style="font-size: larger;">Email</label>
+                                <input type="email" placeholder="exemplo@gmail.com" maxlength="50" class="form-control"  [(ngModel)]="user.email" required="">
+                                <div class="form-text"></div>
+                        </div>
+                      </div>
+
+                    
+                      <div class="col">
+                          <div class="mb-3">
+                              <label class="form-label" style="font-size: larger;">Senha</label>
+                              <input type="password" placeholder="KFS123!@#" maxlength="22" class="form-control"   [(ngModel)]="user.password" required="">
+                      </div>
+                    </div>
+
+                    <br>
+
+                    <div>
+
+                        <button (click)="signUpCognito()" class="btn  btn-outline-light btn-lg">Cadastrar</button>
+                   
+                        <a style="margin-left: 10px;" class="btn  btn-outline-light btn-lg" href="/login">Entrar</a>
+    
+                    </div>
+
+                    <br>
+                    <br>
+      
+              </div>
+            </div>
+
+            <div class="cod" *ngIf="isConfirm">
+              
+                <h4> Um codigo de verificação foi enviado para o Email {{user.email}}</h4>
+
+              <div class="form">
+                <input type="text" name="codigo" placeholder="Digite o codigo" [(ngModel)]="user.code">
+                <button  (click)="confirmLogin()" id="butCod" class="btn btn-outline-light" >Confirmar</button>
+              </div>
+            
+            </div>
+
+        </div>
+    </div>
+</div>

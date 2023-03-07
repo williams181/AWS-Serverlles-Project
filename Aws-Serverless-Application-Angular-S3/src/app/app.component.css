@@ -1,0 +1,33 @@
+#navBar{
+    width: 20%;
+    position: fixed;
+    top:0;
+    bottom:0;
+    background:  #293949;
+    
+}
+#sectionBody{
+    margin-left: 25%;
+    width: 70%;
+}
+#navList{
+margin-top: 10%;
+margin-left: 5%;
+   
+}
+
+
+#navList li a{
+    color:white;
+    margin-bottom: 5%;
+}
+a:hover{
+    background-color: #017af3;
+    
+}
+#sair{
+    margin-top: 10%;
+    
+}
+
+
